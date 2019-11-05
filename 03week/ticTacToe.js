@@ -25,23 +25,69 @@ function printBoard() {
 
 function horizontalWin() {
   // Your code here
+  // check the rows of the board for match
+  if(
+    board[0][0] === playerTurn && 
+    board[0][1] === playerTurn &&
+    board[0][2] === playerTurn 
+  ) {
+    return  true;
+  } else if (
+    board[1][0] === playerTurn && 
+    board[1][1] === playerTurn &&
+    board[1][2] === playerTurn 
+  ) {
+    return true;
+  } else if (
+    board[2][0] === playerTurn && 
+    board[2][1] === playerTurn &&
+    board[2][2] === playerTurn
+  ) {
+    return true;
+
+}  return false 
 }
 
 function verticalWin() {
   // Your code here
-}
+  // check the columns of the board for a match
+} board[0][1] === playerTurn && 
+  board[1][2] === playerTurn &&
+  board[2][2] === playerTurn 
+    {
+    return  true; 
+
 
 function diagonalWin() {
   // Your code here
+  // check for an 'diagnol' pattern on the board
+  // check for a line pattern top right to bottom left on the board
 }
 
 function checkForWin() {
-  // Your code here
+  // Your code here 
+  // check for horizontal, vertical, and diagnol wins
+  // return true if anny checks return true
+  //
 }
 
 function ticTacToe(row, column) {
   // Your code here
-}
+  //manipulate the board array based on the user input(row and column)
+  //manipulate the board array variable and switch from either X to O or O to X
+  let selectedRow = board[row];
+  //[" ", " ", " "]
+  selectedRow[column] = playerTurn
+
+  // maninpulate the player turn variable
+  // switch from either x to 0 or 0 to x
+  if (playerTurn === 'X') {
+    playerTurn = 'O';
+  } else if (playerTurn === 'O') {
+    playerTurn = 'X';
+  }
+      }
+    
 
 function getPrompt() {
   printBoard();
@@ -64,7 +110,8 @@ if (typeof describe === 'function') {
   describe('#ticTacToe()', () => {
     it('should place mark on the board', () => {
       ticTacToe(1, 1);
-      assert.deepEqual(board, [ [' ', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
+      assert.deepEqual(board, 
+        [ [' ', ' ', ' '], [' ', 'X', ' '], [' ', ' ', ' '] ]);
     });
     it('should alternate between players', () => {
       ticTacToe(0, 0);
